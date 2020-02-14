@@ -1,0 +1,68 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 14 feb 2020, 14:17:44
+    Author     : tss
+*/
+div#container div{
+    width: 300px;
+    height: 50px;
+    border: solid 1px blue;
+    margin: 2px auto
+}
+
+#container div:nth-child(2n) {
+    color:red;
+}
+
+span.evidenza {
+    background-color: yellow;;
+}
+span.evidenza:before{
+    content:'[';
+}
+span.evidenza:after{
+    content:'] (' counter(ctEvidenza, upper-latin) ')';
+    font-size: 10px;
+    position: relative;
+    top: -5px;
+}
+
+p {
+    counter-reset: ctEvidenza 0;
+}
+
+span.evidenza {
+    counter-increment: ctEvidenza 1;
+}
+
+table.tab {
+    border: solid 1px black;
+    margin: auto;
+
+}
+table.tab.scacchi tr td {
+    width: 30px;
+    height: 30px;
+    border: solid 1px blue;  
+}
+
+table.tab.scacchi tr:nth-child(odd) td:nth-child(even),
+table.tab.scacchi tr:nth-child(even) td:nth-child(odd){
+    background-color: blue;
+}
+
+table.tab.scacchi tr:nth-child(-n+2) td:nth-child(n),
+table.tab.scacchi tr:nth-last-child(-n+2) td:nth-child(n),
+table.tab.scacchi tr:nth-child(n) td:nth-child(-n+2),
+table.tab.scacchi tr:nth-child(n) td:nth-last-child(-n+2) {
+    background-color: orangered !important;
+}
+
+#cont:after {
+    content: '.' counter(cont);
+
+}
